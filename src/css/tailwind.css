@@ -10,3 +10,8 @@ a:hover {
 @tailwind components;
 
 @tailwind utilities;
+
+.social-icons svg {
+  width: 24px;
+  height: 24px;
+}

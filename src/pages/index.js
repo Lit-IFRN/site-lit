@@ -155,10 +155,10 @@ export default () => (
     <section id="coordenadores" className="pt-20 lg:pt-32">
       <div className="container mx-auto  text-center ">
       <h2 className="text-3xl lg:text-5xl text-center font-semibold">Coordenadores</h2>
-          <div className="flex justify-between flex-wrap sm:flex-row sm:-mx-3 mt-12">
+          <div className="flex flex-col items-center justify-between flex-wrap sm:flex-row sm:-mx-3 mt-12">
           {
             coordinators.map(coordinator => (
-                <Card className="w-3/12 mx-4 p-2">
+                <Card className="w-10/12 mb-4 sm:w-3/12 mx-4 p-2">
                   <img className="w-8/12 mb-4 object-contain rounded-full" src={coordinator.imageUrl}/>
                   <p className="text-xl text-center font-semibold">{coordinator.name}</p>
                 </Card>

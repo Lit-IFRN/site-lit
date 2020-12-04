@@ -168,7 +168,7 @@ export default () => (
       </div>
     </section>
     <section id="equipe" className="pt-20 lg:pt-32">
-      <div className="container mx-auto">
+      <div className="container overflow-y-hidden	 mx-auto">
       <h2 className="text-3xl lg:text-5xl text-center font-semibold">Alunos</h2>
         <Slider {...settings}>
           {studentData.map((student, index) => (

@@ -13,6 +13,16 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
-    `gatsby-plugin-mdx`
+
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: require.resolve('./src/components/default-layout.js'),
+        },
+      },
+    },
+
   ]
 };

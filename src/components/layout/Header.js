@@ -11,16 +11,16 @@ const Header = () => (
         </AnchorLink>
       </div>
       <div className="flex flex-col text-xl sm:text-base text-center sm:flex-row mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#projetos">
+        <AnchorLink className="px-4" href="/#projetos">
           Projetos
         </AnchorLink>
-        <AnchorLink className="px-4" href="#coordenadores">
+        <AnchorLink className="px-4" href="/#coordenadores">
           Coordenadores
         </AnchorLink>
-        <AnchorLink className="px-4" href="#equipe">
+        <AnchorLink className="px-4" href="/#equipe">
           Equipe
         </AnchorLink>
-        <AnchorLink className="px-4" href="#premios">
+        <AnchorLink className="px-4" href="/#premios">
           Prêmios
         </AnchorLink>
       </div>

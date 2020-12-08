@@ -11,6 +11,7 @@ import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "gatsby"
 
 import Slider from "react-slick";
 import {SmartFarmImages, JogoImages, SusImages} from '../data/projects-data'
@@ -88,6 +89,9 @@ const ProjectCarousel = ({images}) => {
 
 export default () => (
   <Layout>
+
+
+
     <section id="about" className="pt-20 md:pt-40">
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
@@ -103,6 +107,26 @@ export default () => (
         </div>
         <div className="lg:w-1/2">
           <HeroImage />
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="premios" className="pt-20 lg:pt-32">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl lg:text-5xl font-semibold">Prêmios</h2>
+        <div className="flex flex-col flex-wrap sm:flex-row sm:-mx-3 mt-12">
+          {Rewards.map(reward => (
+            <div className=" md:w-4/12 px-3">
+            <Card className="mb-8">
+              <p className="font-semibold text-xl">{reward.title}</p>
+              <p className="mt-4">
+                {reward.description}
+              </p>
+              <a className="mt-2" href={reward.link}>Confira</a>
+            </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -149,7 +173,10 @@ export default () => (
           }
           secondarySlot={<ProjectCarousel images={SusImages} />}
         />
-      </div>
+
+        <div className="container text-center mx-auto">
+          <Link className="text-xl" to={"/projects"}>Ver todos projetos</Link></div>
+        </div>
     </section>
 
     <section id="coordenadores" className="pt-20 lg:pt-32">
@@ -181,25 +208,6 @@ export default () => (
     </section>
 
 
-
-    <section id="premios" className="pt-20 lg:pt-32">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl lg:text-5xl font-semibold">Prêmios</h2>
-        <div className="flex flex-col flex-wrap sm:flex-row sm:-mx-3 mt-12">
-          {Rewards.map(reward => (
-            <div className=" md:w-4/12 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">{reward.title}</p>
-              <p className="mt-4">
-                {reward.description}
-              </p>
-              <a className="mt-2" href={reward.link}>Confira</a>
-            </Card>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
 
     
   </Layout>

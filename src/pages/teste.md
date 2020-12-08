@@ -1,6 +1,0 @@
----
-title: Importing Components Example
----
-import { Message } from "theme-ui"
-You can import your own components.
-<Message>MDX gives you JSX in Markdown!</Message>

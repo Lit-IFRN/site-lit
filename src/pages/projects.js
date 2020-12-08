@@ -6,9 +6,13 @@ import { Link } from "gatsby"
 
 const CardAlo =  () => 
           <div className="w-4/12 ">
-            <Card className="m-3 shadow-lg p-1">
+            <Card className="m-3 shadow-lg" noPadding>
               
-                <img style={{width: 150, height: 150}}className="mb-4 object-cover rounded-full" src="https://i.ytimg.com/vi/WU4Lhw0ikLA/maxresdefault.jpg"/>
+                <img className="mb-4 rounded-t-lg object-cover w-100" src="https://i.ytimg.com/vi/WU4Lhw0ikLA/maxresdefault.jpg"/>
+                
+                <div className="p-3">
+
+
                 <h1 className="text-xl text-center font-bold mb-4">Smart Farm</h1>
 
                 <LinesEllipsis
@@ -20,6 +24,7 @@ const CardAlo =  () =>
                   trimRight
                   basedOn='letters'
                 />
+                </div>
               
             </Card>
           </div>

@@ -57,6 +57,7 @@ const Paragraph = (props) => (
     text-indigo-900
     text-paragraph
     leading-relaxed
+    text-justify
     ">
   </p>
 )

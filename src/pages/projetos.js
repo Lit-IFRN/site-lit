@@ -4,7 +4,7 @@ import LinesEllipsis from 'react-lines-ellipsis'
 import { Link } from "gatsby"
 
 
-const CardAlo =  () => 
+const CardAlo =  ({url = "/"}) => 
           <div className="w-12/12 sm:w-6/12 lg:w-4/12 ">
             <Card className="m-3 shadow-lg" noPadding>
               
@@ -20,7 +20,7 @@ const CardAlo =  () =>
                   className="text-center"
                   text='Este trabalho propõe a continuação do desenvolvimento do sistema Br-Agro4. Esse sistema irá atuar junto à atividade rural, suprindo as necessidades tecnológicas do processo evolutivo de produção na Agricultura 4.0, focando inicialmente nas principais atividades e culturas desenvolvidas na agricultura familiar do Seridó.'
                   maxLine='3'
-                  ellipsis={<Link to="/">... ler mais</Link>}
+                  ellipsis={<Link to={url}>... ler mais</Link>}
                   trimRight
                   basedOn='letters'
                 />
@@ -44,6 +44,7 @@ const Projects = () => {
           <CardAlo />
           <CardAlo />
           <CardAlo />
+          <CardAlo url="/projetos/example"/>
         </div>
 
 

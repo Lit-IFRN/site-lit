@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 
 const CardAlo =  () => 
-          <div className="w-4/12 ">
+          <div className="w-12/12 sm:w-6/12 lg:w-4/12 ">
             <Card className="m-3 shadow-lg" noPadding>
               
                 <img className="mb-4 rounded-t-lg object-cover w-100" src="https://i.ytimg.com/vi/WU4Lhw0ikLA/maxresdefault.jpg"/>
@@ -35,7 +35,7 @@ const Projects = () => {
     <Layout>
       <div className="mx-auto container px-8">
         <h1 className="mb-6 text-2xl lg:text-3xl xl:text-5xl text-center mt-2">Todos os projetos</h1>
-        <div className="flex  flex-col md:flex-row  flex-wrap">
+        <div className="flex items-center flex-col sm:flex-row  flex-wrap">
           <CardAlo />
           <CardAlo />
           <CardAlo />

@@ -54,8 +54,7 @@ const H3 = (props) => (
 const Paragraph = (props) => (
   <p {...props} className="
     text-xl 
-    text-indigo-900
-    text-paragraph
+    text-color-paragraph
     leading-relaxed
     text-justify
     ">
@@ -85,9 +84,9 @@ const Project = ({ data: { mdx: project } }) => (
 
       <img src={project.frontmatter.image_url} className='mx-auto mt-10 mb-4'/>
 
-      <p className='text-xl text-indigo-900 text-paragraph leading-relaxed'>
+      <Paragraph>
         {project.frontmatter.description}
-      </p>
+      </Paragraph>
 
       <MDXRenderer>{project.body}</MDXRenderer>
     </ProjectLayout>

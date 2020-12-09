@@ -175,7 +175,7 @@ export default () => (
           }
           secondarySlot={<ProjectCarousel images={SusImages} />}
         />
-
+to
         <div className="container text-center mx-auto">
           <Link className="text-xl" to={"/projects"}>Ver todos projetos</Link></div>
         </div>

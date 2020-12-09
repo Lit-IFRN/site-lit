@@ -36,14 +36,13 @@ const Projects = () => {
       <div className="mx-auto container px-8">
         <h1 className="mb-6 text-2xl lg:text-3xl xl:text-5xl text-center mt-2">Todos os projetos</h1>
         <div className="flex items-center flex-col sm:flex-row  flex-wrap">
-          <CardAlo />
-          <CardAlo />
-          <CardAlo />
-          <CardAlo />
-          <CardAlo />
-          <CardAlo />
-          <CardAlo />
-          <CardAlo />
+          <CardAlo url="/projetos/example"/>
+          <CardAlo url="/projetos/example"/>
+          <CardAlo url="/projetos/example"/>
+          <CardAlo url="/projetos/example"/>
+          <CardAlo url="/projetos/example"/>
+          <CardAlo url="/projetos/example"/>
+          <CardAlo url="/projetos/example"/>
           <CardAlo url="/projetos/example"/>
         </div>
 

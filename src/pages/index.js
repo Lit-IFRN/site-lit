@@ -203,7 +203,7 @@ export default () => (
 
     <section id="equipe" className="py-10 md:py-">
       <div className="container overflow-y-hidden	overflow-x-hidden  mx-auto">
-      <h2 className="text-3xl lg:text-5xl text-center font-semibold">Alunos</h2>
+      <h2 className="text-3xl lg:text-5xl text-center font-semibold">Colaboradores</h2>
         <Slider {...settings}>
           {studentData.map((student, index) => (
             <div key={index} className="flex-1 outline-none mx-4 p-2">

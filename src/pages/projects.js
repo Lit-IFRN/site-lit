@@ -8,17 +8,17 @@ const CardAlo =  () =>
           <div className="w-12/12 sm:w-6/12 lg:w-4/12 ">
             <Card className="m-3 shadow-lg" noPadding>
               
-                <img className="mb-4 rounded-t-lg object-cover w-100" src="https://i.ytimg.com/vi/WU4Lhw0ikLA/maxresdefault.jpg"/>
+                <img className="sm:mb-4 rounded-t-lg object-cover w-100" src="https://i.ytimg.com/vi/WU4Lhw0ikLA/maxresdefault.jpg"/>
                 
-                <div className="p-3">
+                <div className="p-1 sm:p-3">
 
 
-                <h1 className="text-xl text-center font-bold mb-4">Smart Farm</h1>
+                <h1 className="text-xl text-center font-bold sm:mb-4">Smart Farm</h1>
 
                 <LinesEllipsis
                   component={"p"}
                   className="text-center"
-                  text='long long textEste trabalho propõe a continuação do desenvolvimento do sistema Br-Agro4. Esse sistema irá atuar junto à atividade rural, suprindo as necessidades tecnológicas do processo evolutivo de produção na Agricultura 4.0, focando inicialmente nas principais atividades e culturas desenvolvidas na agricultura familiar do Seridó.'
+                  text='Este trabalho propõe a continuação do desenvolvimento do sistema Br-Agro4. Esse sistema irá atuar junto à atividade rural, suprindo as necessidades tecnológicas do processo evolutivo de produção na Agricultura 4.0, focando inicialmente nas principais atividades e culturas desenvolvidas na agricultura familiar do Seridó.'
                   maxLine='3'
                   ellipsis={<Link to="/">... ler mais</Link>}
                   trimRight

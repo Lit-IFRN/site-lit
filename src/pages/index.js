@@ -92,7 +92,7 @@ export default () => (
 
 
 
-    <section id="about" className="pt-20 md:pt-40">
+    <section id="about" className="py-10 md:py-20">
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-2xl lg:text-3xl xl:text-6xl font-bold leading-none">
@@ -111,8 +111,9 @@ export default () => (
       </div>
     </section>
 
-    
-    <section id="premios" className="pt-20 lg:pt-32">
+    <hr className="shadow" />
+
+    <section id="premios" className="py-10 md:py-20 ">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">Prêmios</h2>
         <div className="flex flex-col flex-wrap sm:flex-row sm:-mx-3 mt-12">
@@ -123,7 +124,6 @@ export default () => (
               <p className="mt-4">
                 {reward.description}
               </p>
-              <a className="mt-2" href={reward.link}>Confira</a>
             </Card>
             </div>
           ))}
@@ -131,7 +131,9 @@ export default () => (
       </div>
     </section>
 
-    <section id="projetos" className="pt-20 lg:pt-32">
+    <hr className="shadow" />
+
+    <section id="projetos" className="py-10 lg:py-20">
       <div className="container mx-auto ">
         <h2 className="text-3xl lg:text-5xl text-center font-semibold">Projetos</h2>
       
@@ -179,7 +181,9 @@ export default () => (
         </div>
     </section>
 
-    <section id="coordenadores" className="pt-20 lg:pt-32">
+    <hr className="shadow" />
+
+    <section id="coordenadores" className="py-10 md:py-20">
       <div className="container mx-auto  text-center ">
       <h2 className="text-3xl lg:text-5xl text-center font-semibold">Coordenadores</h2>
           <div className="flex flex-col items-center justify-between flex-wrap sm:flex-row sm:-mx-3 mt-12">
@@ -194,9 +198,12 @@ export default () => (
         </div>
       </div>
     </section>
-    <section id="equipe" className="pt-20 lg:pt-32">
-      <div className="container overflow-y-hidden	 mx-auto">
-      <h2 className="text-3xl lg:text-5xl text-center font-semibold">Alunos</h2>
+    
+    <hr className="shadow" />
+
+    <section id="equipe" className="py-10 md:py-">
+      <div className="container overflow-y-hidden	overflow-x-hidden  mx-auto">
+      <h2 className="text-3xl lg:text-5xl text-center font-semibold">Colaboradores</h2>
         <Slider {...settings}>
           {studentData.map((student, index) => (
             <div key={index} className="flex-1 outline-none mx-4 p-2">

@@ -17,3 +17,7 @@ a:hover {
   width: 24px;
   height: 24px;
 }
+
+hr {
+  border-top-width: 1px;
+}

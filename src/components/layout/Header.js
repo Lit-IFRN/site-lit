@@ -3,7 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import LogoIcon from '../../assets/logo_lit2019.png';
 
 const Header = () => (
-  <header className="sm:sticky top-0 bg-white shadow z-50">
+  <header className="top-0 bg-white shadow z-50">
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
         <AnchorLink href="#about" className="w-16 mr-3">

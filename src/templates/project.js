@@ -23,10 +23,11 @@ const H1 = (props) => (
     text-3xl
     mt-8
     mb-1
-    text-lg
+    text-left
     font-black
     font-title
     text-color-title
+    
   "></h1> 
 )
 //#093145
@@ -46,17 +47,16 @@ const H3 = (props) => (
     font-medium
     mt-6
     mb-2
-    text-sm
   "></h1> 
 )
 
 
 const Paragraph = (props) => (
   <p {...props} className="
-    text-xl 
+    text-mobile
     text-color-paragraph
-    leading-relaxed
-    text-justify
+    leading-smug
+    md:text-2xl
     ">
   </p>
 )
@@ -80,9 +80,9 @@ const Project = ({ data: { mdx: project } }) => (
   >
 
     <ProjectLayout>
-      <H1 className="text-4xl font-medium font-title text-color-dark"> {project.frontmatter.title} </H1>
+      <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center"> {project.frontmatter.title} </h1>
 
-      <img src={project.frontmatter.image_url} className='mx-auto mt-10 mb-4'/>
+      <img src={project.frontmatter.image_url} className='mx-auto mt-6 mb-4'/>
 
       <Paragraph>
         {project.frontmatter.description}

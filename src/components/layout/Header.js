@@ -10,7 +10,7 @@ const Header = () => (
       <img src={LogoIcon} />
     </Link>
   </div>
-  <div className="flex flex-col text-xl sm:text-base text-center sm:flex-row mt-4 sm:mt-0">
+  <div className="flex flex-row text-xl sm:text-base text-center sm:flex-row mt-4 sm:mt-0">
     <Link classname="px-4" to="/">
       Home
     </Link>

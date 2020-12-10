@@ -5,6 +5,11 @@ module.exports = {
       'title': ['Merriweather', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif']
     },
     extend: {
+      fontSize: {
+        'mobile': '1.35rem',
+
+        
+      },
       colors: {
         background: {
           default: '#FAFAFA'

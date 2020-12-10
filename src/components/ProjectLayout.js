@@ -8,7 +8,7 @@ const ProjectLayout = ({children}) => {
         <>
       <Header />
 
-        <div className="container mx-auto max-w-4xl font-sans">
+        <div className="container mx-auto max-w-4xl font-sans w-11/12 md:w-full ">
             {children}
         </div>
       <Footer />

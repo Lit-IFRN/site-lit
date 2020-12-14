@@ -13,11 +13,22 @@ a:hover {
 
 @tailwind utilities;
 
-.social-icons svg {
+.social-icons a {
+  color: #000;
+}
+
+.social-icons a > svg, .social-icons a > img {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 hr {
   border-top-width: 1px;
+}
+
+@media (max-width: 480px) {
+  .coordinator-card {
+    width: 70vw;
+  }
 }

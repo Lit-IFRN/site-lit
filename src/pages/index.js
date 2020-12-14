@@ -12,6 +12,7 @@ import SvgCharts from '../svg/SvgCharts';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "gatsby"
+import CoordinatorCard from '../components/CoordinatorCard'
 
 import Slider from "react-slick";
 import {SmartFarmImages, JogoImages, SusImages} from '../data/projects-data'
@@ -32,13 +33,13 @@ const settings = {
       settings: {
         
         centerMode: true,
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         infinite: true,
       }
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         
         centerMode: true,
@@ -175,7 +176,6 @@ export default () => (
           }
           secondarySlot={<ProjectCarousel images={SusImages} />}
         />
-to
         <div className="container text-center mx-auto">
           <Link className="text-xl" to={"/projects"}>Ver todos projetos</Link></div>
         </div>
@@ -186,13 +186,15 @@ to
     <section id="coordenadores" className="py-10 md:py-20">
       <div className="container mx-auto  text-center ">
       <h2 className="text-3xl lg:text-5xl text-center font-semibold">Coordenadores</h2>
-          <div className="flex flex-col items-center justify-between flex-wrap sm:flex-row sm:-mx-3 mt-12">
+          <div className="flex justify-center items-center flex-wrap sm:flex-row sm:-mx-3 mt-12">
           {
             coordinators.map(coordinator => (
-                <Card className="w-10/12 mb-4 sm:w-3/12 mx-4 p-2">
-                  <img className="w-8/12 mb-4 object-contain rounded-full" src={coordinator.imageUrl}/>
-                  <p className="text-xl text-center font-semibold">{coordinator.name}</p>
-                </Card>
+              <CoordinatorCard coordinator={coordinator} />
+ 
+               // <Card className="w-10/12 mb-4 md:w-5/12 lg:w-3/12 mx-4 p-2">
+                //   <img className="w-8/12 mb-4 object-contain rounded-full" src={coordinator.imageUrl}/>
+                //   <p className="text-xl text-center font-semibold">{coordinator.name}</p>
+                // </Card>
             ))
           }
         </div>
@@ -206,7 +208,7 @@ to
       <h2 className="text-3xl lg:text-5xl text-center font-semibold">Colaboradores</h2>
         <Slider {...settings}>
           {studentData.map((student, index) => (
-            <div key={index} className="flex-1 outline-none mx-4 p-2">
+            <div key={index} className="flex-1 outline-none mx-0 p-2">
               <StudentCard student={student} />
             </div>
           ))}

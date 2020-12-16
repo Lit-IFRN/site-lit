@@ -1,7 +1,7 @@
-import Layout from '../components/layout/Layout';
-import Card from '../components/Card';
 import LinesEllipsis from 'react-lines-ellipsis';
 import { Link } from 'gatsby';
+import Layout from '../components/layout/Layout';
+import Card from '../components/Card';
 import useProjects from '../hooks/useProjects';
 
 const CardAlo = ({ title, description = 'Descrição', image_url, url = '' }) => (
@@ -13,7 +13,7 @@ const CardAlo = ({ title, description = 'Descrição', image_url, url = '' }) =>
         <h1 className="text-xl text-center font-bold sm:mb-4">{title}</h1>
 
         <LinesEllipsis
-          component={'p'}
+          component="p"
           className="text-center"
           text={description}
           maxLine="3"
@@ -34,7 +34,7 @@ const Projects = () => {
         <h1 className="mb-6 text-2xl lg:text-3xl xl:text-5xl text-center mt-2">
           Todos os projetos
         </h1>
-        <div className="flex items-center flex-col sm:flex-row  flex-wrap">
+        <div className="flex items-center flex-col sm:flex-row flex-wrap">
           {projects.map(project => (
             <CardAlo
               key={project.slug}

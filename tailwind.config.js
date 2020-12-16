@@ -1,14 +1,12 @@
 module.exports = {
   theme: {
     fontFamily: {
-      'paragraph': ['Montserrat', 'Roboto', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      'title': ['Merriweather', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif']
+      paragraph: ['Montserrat', 'Roboto', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      title: ['Merriweather', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif']
     },
     extend: {
       fontSize: {
-        'mobile': '1.35rem',
-
-        
+        mobile: '1.35rem'
       },
       colors: {
         background: {
@@ -22,7 +20,7 @@ module.exports = {
         'color-title': {
           default: '#030517'
         },
-        //292549
+        // 292549
         'color-paragraph': {
           default: '#2E2F42'
         }

@@ -10,16 +10,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/projects`,
-      },
+        path: `${__dirname}/projects`
+      }
     },
 
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
-      },
-    },
-
+        extensions: [`.mdx`, `.md`]
+      }
+    }
   ]
 };

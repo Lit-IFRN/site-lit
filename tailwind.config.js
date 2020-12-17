@@ -8,6 +8,10 @@ module.exports = {
       fontSize: {
         mobile: '1.35rem'
       },
+      maxWidth: {
+        '320px': '300px',
+
+      },
       colors: {
         background: {
           default: '#FAFAFA'

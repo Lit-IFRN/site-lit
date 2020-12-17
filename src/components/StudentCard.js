@@ -7,8 +7,8 @@ const LattesIcon = ({ className }) => {
   return <img className={className} style={{ width: 22, height: 22 }} src={lattesIcon} />;
 };
 
-const StudentCard = ({ student }) => (
-  <Card className="w-full">
+const StudentCard = ({ student, className, ...props }) => (
+  <Card className={"w-full "+className} {...props}>
     <img
       className="w-10/12 mb-4 rounded-full"
       src={student.imageUrl || 'https://suap.ifrn.edu.br/media/alunos/219588.aX8YW2BqOJRx.jpg'}

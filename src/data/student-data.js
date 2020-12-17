@@ -11,7 +11,7 @@ export default [
     imageUrl:
       'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg',
     course: 'Front End',
-    projects: [],
+    projects: ['example'],
     github: 'https://github.com/brunoeduardodev',
     curriculum: 'https://github.com/brunoeduardodev'
   },
@@ -27,7 +27,7 @@ export default [
     imageUrl:
       'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg',
     course: 'Front End',
-    projects: ['ivo']
+    projects: ['ivo', 'example']
   },
   {
     name: 'Dudu Udud',

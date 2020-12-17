@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import ProjectLayout from '../components/ProjectLayout';
-import StudentCard from '../components/StudentCard';
-import students from '../data/student-data.js';
 
 export const query = graphql`
   query($slug: String!) {
@@ -72,18 +70,7 @@ const Paragraph = props => (
   />
 );
 
-// Titulo
-// fell, Georgia, Cambria, "Times New Roman", Times, serif
-
-// Texto
-// charter, Georgia, Cambria, "Times New Roman", Times, serif;
-
-const Project = ({ data: { mdx: project } }) => {
-  const participants = students.filter(student =>
-    student.projects.includes(project.frontmatter.slug)
-  );
-
-  return (
+const Project = ({ data: { mdx: project } }) => (
     <MDXProvider
       components={{
         p: Paragraph,
@@ -92,7 +79,7 @@ const Project = ({ data: { mdx: project } }) => {
         h3: H3
       }}
     >
-      <ProjectLayout>
+      <ProjectLayout projectSlug={project.frontmatter.slug}>
         <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center">
           {' '}
           {project.frontmatter.title}{' '}
@@ -100,12 +87,8 @@ const Project = ({ data: { mdx: project } }) => {
         <img src={project.frontmatter.image_url} className="mx-auto mt-6 mb-4" />
         <Paragraph>{project.frontmatter.description}</Paragraph>
         <MDXRenderer>{project.body}</MDXRenderer>
-        {participants.map(a => (
-          <StudentCard student={a} />
-        ))}
       </ProjectLayout>
     </MDXProvider>
   );
-};
 
 export default Project;

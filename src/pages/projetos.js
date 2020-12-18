@@ -1,25 +1,43 @@
 import LinesEllipsis from 'react-lines-ellipsis';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
+import useProjects from '../hooks/useProjects';
+import findImage from '../utils/findImage';
 
-const CardAlo = ({ url = '/' }) => (
-  <div className="w-12/12 sm:w-6/12 lg:w-4/12 ">
+export const query = graphql`
+  query {
+    allFile(filter: { relativeDirectory: { regex: "/images/i" } }) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const ProjectCard = ({ title, description = 'Descrição', image, url = '' }) => (
+  <div className="sm:w-6/12 lg:w-4/12 ">
     <Card className="m-3 shadow-lg" noPadding>
-      <img
-        className="sm:mb-4 rounded-t-lg object-cover w-100"
-        src="https://i.ytimg.com/vi/WU4Lhw0ikLA/maxresdefault.jpg"
-      />
-
+      <Img fluid={image} className=" sm:mb-4 rounded-t-lg w-full object-cover" alt={title} />
       <div className="p-1 sm:p-3">
-        <h1 className="text-xl text-center font-bold sm:mb-4">Smart Farm</h1>
+        <Link to={url}>
+          <h1 className="text-xl text-center font-bold sm:mb-4">{title}</h1>
+        </Link>
 
         <LinesEllipsis
           component="p"
           className="text-center"
-          text="Este trabalho propõe a continuação do desenvolvimento do sistema Br-Agro4. Esse sistema irá atuar junto à atividade rural, suprindo as necessidades tecnológicas do processo evolutivo de produção na Agricultura 4.0, focando inicialmente nas principais atividades e culturas desenvolvidas na agricultura familiar do Seridó."
+          text={description}
           maxLine="3"
-          ellipsis={<Link to={url}>... ler mais</Link>}
+          ellipsis={<Link to={`/projetos/${url}`}>... ler mais</Link>}
           trimRight
           basedOn="letters"
         />
@@ -28,22 +46,26 @@ const CardAlo = ({ url = '/' }) => (
   </div>
 );
 
-const Projects = () => {
+const Projects = ({ data: { allFile } }) => {
+  const images = allFile.edges;
+  const projects = useProjects();
+
   return (
     <Layout>
       <div className="mx-auto container px-8">
         <h1 className="mb-6 text-2xl lg:text-3xl xl:text-5xl text-center mt-2">
           Todos os projetos
         </h1>
-        <div className="flex items-center flex-col sm:flex-row  flex-wrap">
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
-          <CardAlo url="/projetos/example" />
+        <div className="flex items-center flex-col sm:flex-row flex-wrap">
+          {projects.map(project => (
+            <ProjectCard
+              key={project.slug}
+              title={project.title}
+              description={project.description}
+              image={findImage(images, project.image_name)}
+              url={project.slug}
+            />
+          ))}
         </div>
       </div>
     </Layout>

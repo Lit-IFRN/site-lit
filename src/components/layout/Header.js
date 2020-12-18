@@ -11,7 +11,7 @@ const Header = () => (
         </Link>
       </div>
       <div className="flex flex-row text-xl sm:text-base text-center sm:flex-row mt-4 sm:mt-0">
-        <Link classname="px-4" to="/">
+        <Link className="px-4" to="/">
           Home
         </Link>
         <Link className="px-4" to="/projetos">

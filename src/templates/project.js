@@ -24,7 +24,7 @@ const H1 = props => (
     className="
     text-3xl
     mt-8
-    mb-1
+    mb-1 
     text-left
     font-black
     font-title
@@ -71,24 +71,24 @@ const Paragraph = props => (
 );
 
 const Project = ({ data: { mdx: project } }) => (
-    <MDXProvider
-      components={{
-        p: Paragraph,
-        h1: H1,
-        h2: H2,
-        h3: H3
-      }}
-    >
-      <ProjectLayout projectSlug={project.frontmatter.slug}>
-        <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center">
-          {' '}
-          {project.frontmatter.title}{' '}
-        </h1>
-        <img src={project.frontmatter.image_url} className="mx-auto mt-6 mb-4" />
-        <Paragraph>{project.frontmatter.description}</Paragraph>
-        <MDXRenderer>{project.body}</MDXRenderer>
-      </ProjectLayout>
-    </MDXProvider>
-  );
+  <MDXProvider
+    components={{
+      p: Paragraph,
+      h1: H1,
+      h2: H2,
+      h3: H3
+    }}
+  >
+    <ProjectLayout projectSlug={project.frontmatter.slug}>
+      <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center">
+        {' '}
+        {project.frontmatter.title}{' '}
+      </h1>
+      <img src={project.frontmatter.image_url} className="mx-auto mt-6 mb-4" />
+      <Paragraph>{project.frontmatter.description}</Paragraph>
+      <MDXRenderer>{project.body}</MDXRenderer>
+    </ProjectLayout>
+  </MDXProvider>
+);
 
 export default Project;

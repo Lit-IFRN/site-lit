@@ -1,20 +1,17 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import Slider from 'react-slick';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import StudentCard from '../components/StudentCard';
-import LabelText from '../components/LabelText';
 import Layout from '../components/layout/Layout';
 import SplitSection from '../components/SplitSection';
-import StatsBox from '../components/StatsBox';
 import studentData from '../data/student-data';
 import HeroImage from '../svg/HeroImage';
-import SvgCharts from '../svg/SvgCharts';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Link } from 'gatsby';
 import CoordinatorCard from '../components/CoordinatorCard';
 
-import Slider from 'react-slick';
 import { SmartFarmImages, JogoImages, SusImages } from '../data/projects-data';
 import { Rewards } from '../data/rewards-data';
 import coordinators from '../data/coordinator-data';

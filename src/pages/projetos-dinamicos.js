@@ -4,10 +4,10 @@ import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
 import useProjects from '../hooks/useProjects';
 
-const CardAlo = ({ title, description = 'Descrição', image_url, url = '' }) => (
+const CardAlo = ({ title, description = 'Descrição', image_name, url = '' }) => (
   <div className="w-12/12 sm:w-6/12 lg:w-4/12 ">
     <Card className="m-3 shadow-lg" noPadding>
-      <img className="sm:mb-4 rounded-t-lg object-cover w-100" src={image_url} />
+      <img className="sm:mb-4 rounded-t-lg object-cover w-100" src={image_name} />
 
       <div className="p-1 sm:p-3">
         <h1 className="text-xl text-center font-bold sm:mb-4">{title}</h1>
@@ -40,7 +40,7 @@ const Projects = () => {
               key={project.slug}
               title={project.title}
               description={project.description}
-              image_url={project.image_url}
+              image_name={project.image_name}
               url={project.slug}
             />
           ))}

@@ -1,17 +1,32 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import { Linkedin, Github, InstagramAlt } from '@styled-icons/boxicons-logos';
 import Card from './Card';
-import lattesIcon from '../assets/lattes_icon.png';
 
 const LattesIcon = ({ className }) => {
-  return <img className={className} style={{ width: 22, height: 22 }} src={lattesIcon} />;
+  const { file } = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "lattes_icon.png" }) {
+        childImageSharp {
+          fixed(width: 22, height: 22) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+  return <Img fixed={file.childImageSharp.fixed} className={className} />;
 };
 
 const StudentCard = ({ student, className, ...props }) => (
   <Card className={className || 'w-full '} {...props}>
     <img
       className="w-10/12 mb-4 rounded-full"
-      src={student.imageUrl || 'https://suap.ifrn.edu.br/media/alunos/219588.aX8YW2BqOJRx.jpg'}
+      src={
+        student.imageUrl ||
+        'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg'
+      }
       alt={`Foto do estudante ${student.name}`}
     />
     <p className="text-xl text-center font-semibold">{student.name}</p>
@@ -22,22 +37,22 @@ const StudentCard = ({ student, className, ...props }) => (
 
       <div className="flex flex-row items-end social-icons mb-4">
         {student.linkedin && (
-          <a target="_blank" href={student.linkedin}>
+          <a target="_blank" rel="noreferrer" href={student.linkedin}>
             <Linkedin className="mx-1" />
           </a>
         )}
         {student.github && (
-          <a target="_blank" href={student.github}>
+          <a target="_blank" rel="noreferrer" href={student.github}>
             <Github className="mx-1" />
           </a>
         )}
         {student.instagram && (
-          <a target="_blank" href={student.instagram}>
+          <a target="_blank" rel="noreferrer" href={student.instagram}>
             <InstagramAlt className="mx-1" />
           </a>
         )}
         {student.lattes && (
-          <a target="_blank" href={student.lattes}>
+          <a target="_blank" rel="noreferrer" href={student.lattes}>
             <LattesIcon className="mx-1" />
           </a>
         )}
@@ -45,6 +60,7 @@ const StudentCard = ({ student, className, ...props }) => (
 
       <a
         target="_blank"
+        rel="noreferrer"
         href={student.curriculum}
         className="py-2 hover:text-white px-6 bg-green-500 text-white font-semibold rounded-lg shadow-md focus:outline-none"
       >

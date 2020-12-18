@@ -1,8 +1,7 @@
 export default [
   {
     name: 'Breno J',
-    imageUrl:
-      'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg',
+    imageUrl: 'breno.jpg',
     course: 'Front End',
     projects: ['example', 'darlon']
   },

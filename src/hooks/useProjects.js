@@ -9,7 +9,7 @@ const useProjects = () => {
             slug
             title
             description
-            image_url
+            image_name
           }
         }
       }
@@ -20,7 +20,7 @@ const useProjects = () => {
     slug: project.frontmatter.slug,
     title: project.frontmatter.title,
     description: project.frontmatter.description,
-    image_url: project.frontmatter.image_url
+    image_name: project.frontmatter.image_name
   }));
 };
 

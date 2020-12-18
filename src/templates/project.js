@@ -1,19 +1,28 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import ProjectLayout from '../components/ProjectLayout';
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $image_name: String) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         slug
         title
         description
-        image_url
+        image_name
       }
       body
+    }
+
+    image: file(name: { eq: $image_name }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   }
 `;
@@ -70,7 +79,7 @@ const Paragraph = props => (
   />
 );
 
-const Project = ({ data: { mdx: project } }) => (
+const Project = ({ data: { image, mdx: project } }) => (
   <MDXProvider
     components={{
       p: Paragraph,
@@ -81,10 +90,9 @@ const Project = ({ data: { mdx: project } }) => (
   >
     <ProjectLayout projectSlug={project.frontmatter.slug}>
       <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center">
-        {' '}
-        {project.frontmatter.title}{' '}
+        {project.frontmatter.title}
       </h1>
-      <img src={project.frontmatter.image_url} className="mx-auto mt-6 mb-4" />
+      <Img fluid={image.childImageSharp.fluid} className="mx-auto mt-6 mb-4" />
       <Paragraph>{project.frontmatter.description}</Paragraph>
       <MDXRenderer>{project.body}</MDXRenderer>
     </ProjectLayout>

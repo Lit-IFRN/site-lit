@@ -19,15 +19,12 @@ const LattesIcon = ({ className }) => {
   return <Img fixed={file.childImageSharp.fixed} className={className} />;
 };
 
-const StudentCard = ({ student, className, ...props }) => (
+const StudentCard = ({ student, className, image, ...props }) => (
   <Card className={className || 'w-full '} {...props}>
-    <img
-      className="w-10/12 mb-4 rounded-full"
-      src={
-        student.imageUrl ||
-        'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg'
-      }
+    <Img
+      fluid={image}
       alt={`Foto do estudante ${student.name}`}
+      className="w-full mb-4 rounded-full"
     />
     <p className="text-xl text-center font-semibold">{student.name}</p>
     <div className="flex flex-col mt-1 items-center">

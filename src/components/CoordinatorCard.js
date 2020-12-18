@@ -11,7 +11,7 @@ const CoordinatorCard = ({ coordinator }) => (
   <Card className="coordinator-card w-6/12 sm:w-3/12 m-4">
     <img
       className="w-10/12 mb-4 rounded-full"
-      src={coordinator.imageUrl || 'https://suap.ifrn.edu.br/media/alunos/219588.aX8YW2BqOJRx.jpg'}
+      src={coordinator.imageName || 'https://suap.ifrn.edu.br/media/alunos/219588.aX8YW2BqOJRx.jpg'}
       alt={`Foto do coordenador ${coordinator.name}`}
     />
     <p className="text-xl text-center font-semibold">{coordinator.name}</p>

@@ -1,7 +1,7 @@
 export default [
   {
     name: 'Breno J',
-    imageName: 'breno',
+    imageName: 'default-profile',
     course: 'Front End',
     projects: ['example', 'darlon']
   },

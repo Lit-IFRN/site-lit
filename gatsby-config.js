@@ -1,8 +1,15 @@
 module.exports = {
+  siteMetadata: {
+    title: 'LIT - IFRN',
+    description:
+      'Laboratório de inovação tecnológica do Instituto Federal do Rio Grande do Norte, Caicó Rn'
+  },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-theme-codebushi`,
       options: {
@@ -36,6 +43,15 @@ module.exports = {
             }
           }
         ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Laboratório de Inovação Tecnológica - IFRN',
+        short_name: 'LIT - IFRN',
+        start_url: '/',
+        icon: 'src/assets/logo_lit.png'
       }
     }
   ]

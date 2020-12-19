@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import { Linkedin, Github, InstagramAlt } from '@styled-icons/boxicons-logos';
 import Card from './Card';
 
+
 const LattesIcon = ({ className }) => {
   const { file } = useStaticQuery(graphql`
     query {

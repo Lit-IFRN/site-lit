@@ -1,8 +1,10 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 import ProjectLayout from '../components/ProjectLayout';
 
 export const query = graphql`
@@ -79,24 +81,35 @@ const Paragraph = props => (
   />
 );
 
-const Project = ({ data: { image, mdx: project } }) => (
-  <MDXProvider
-    components={{
-      p: Paragraph,
-      h1: H1,
-      h2: H2,
-      h3: H3
-    }}
-  >
-    <ProjectLayout projectSlug={project.frontmatter.slug}>
-      <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center">
-        {project.frontmatter.title}
-      </h1>
-      <Img fluid={image.childImageSharp.fluid} className="mx-auto mt-6 mb-4" />
-      <Paragraph>{project.frontmatter.description}</Paragraph>
-      <MDXRenderer>{project.body}</MDXRenderer>
-    </ProjectLayout>
-  </MDXProvider>
-);
+const Project = ({ data: { image, mdx: project } }) => {
+  const { title, description } = useSiteMetadata();
+
+  return (
+    <>
+      <Helmet>
+        <html lang="pt-br" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <MDXProvider
+        components={{
+          p: Paragraph,
+          h1: H1,
+          h2: H2,
+          h3: H3
+        }}
+      >
+        <ProjectLayout projectSlug={project.frontmatter.slug}>
+          <h1 className="mt-2 md:mt-5 md:mb-0 text-5xl font-medium font-title text-color-dark text-center">
+            {project.frontmatter.title}
+          </h1>
+          <Img fluid={image.childImageSharp.fluid} className="mx-auto mt-6 mb-4" />
+          <Paragraph>{project.frontmatter.description}</Paragraph>
+          <MDXRenderer>{project.body}</MDXRenderer>
+        </ProjectLayout>
+      </MDXProvider>
+    </>
+  );
+};
 
 export default Project;
